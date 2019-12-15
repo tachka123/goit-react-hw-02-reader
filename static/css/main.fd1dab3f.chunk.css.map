@@ -1,0 +1,1 @@
+{"version":3,"sources":["variables.module.css"],"names":[],"mappings":"AAAA,EACE,SAAU,CACV,QAAS,CACT,qBACF,CAEA,4BACE,WAAY,CACZ,mBACF,CAEA,gCACE,cACF","file":"main.fd1dab3f.chunk.css","sourcesContent":["* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n}\n\n.container {\n  width: 700px;\n  margin: 100px auto 0;\n}\n\n.container div {\n  padding: 20px 0;\n}\n"]}
