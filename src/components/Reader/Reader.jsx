@@ -3,24 +3,17 @@ import Controls from './Controls';
 import Progress from './Progress';
 import Publication from './Publication';
 import data from './data.json';
+import binOperators from './binOperators';
 
 class Reader extends Component {
   state = {
     publicationIndex: 0,
   };
 
-  onClickNext = () => {
+  onClickPlusOrMinus = operator => {
     this.setState(prev => {
       return {
-        publicationIndex: prev.publicationIndex + 1,
-      };
-    });
-  };
-
-  onClickPrev = () => {
-    this.setState(prev => {
-      return {
-        publicationIndex: prev.publicationIndex - 1,
+        publicationIndex: binOperators[operator].exec(prev.publicationIndex, 1),
       };
     });
   };
@@ -31,8 +24,7 @@ class Reader extends Component {
     return (
       <div>
         <Controls
-          onClickNext={this.onClickNext}
-          onClickPrev={this.onClickPrev}
+          onClickPlusOrMinus={this.onClickPlusOrMinus}
           prevBtnDisabled={publicationIndex === 0}
           nextBtnDisabled={publicationIndex + 1 === massiveLength}
         />

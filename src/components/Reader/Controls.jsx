@@ -1,18 +1,21 @@
 import React from 'react';
 import T from 'prop-types';
 
-const Controls = ({
-  onClickNext,
-  onClickPrev,
-  prevBtnDisabled,
-  nextBtnDisabled,
-}) => {
+const Controls = ({ onClickPlusOrMinus, prevBtnDisabled, nextBtnDisabled }) => {
   return (
     <section>
-      <button disabled={prevBtnDisabled} onClick={onClickPrev} type="button">
+      <button
+        disabled={prevBtnDisabled}
+        onClick={() => onClickPlusOrMinus('-')}
+        type="button"
+      >
         Назад
       </button>
-      <button disabled={nextBtnDisabled} onClick={onClickNext} type="button">
+      <button
+        disabled={nextBtnDisabled}
+        onClick={() => onClickPlusOrMinus('+')}
+        type="button"
+      >
         Вперед
       </button>
     </section>
@@ -25,8 +28,7 @@ Controls.defaultProps = {
 };
 
 Controls.propTypes = {
-  onClickNext: T.func.isRequired,
-  onClickPrev: T.func.isRequired,
+  onClickPlusOrMinus: T.func.isRequired,
   prevBtnDisabled: T.bool,
   nextBtnDisabled: T.bool,
 };
