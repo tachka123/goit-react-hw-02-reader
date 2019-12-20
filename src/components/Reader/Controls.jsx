@@ -5,16 +5,18 @@ const Controls = ({ onClickPlusOrMinus, prevBtnDisabled, nextBtnDisabled }) => {
   return (
     <section>
       <button
+        name='-'
         disabled={prevBtnDisabled}
-        onClick={() => onClickPlusOrMinus('-')}
-        type="button"
+        onClick={onClickPlusOrMinus}
+        type='button'
       >
         Назад
       </button>
       <button
+        name='+'
         disabled={nextBtnDisabled}
-        onClick={() => onClickPlusOrMinus('+')}
-        type="button"
+        onClick={onClickPlusOrMinus}
+        type='button'
       >
         Вперед
       </button>

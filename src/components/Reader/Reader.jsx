@@ -3,17 +3,18 @@ import Controls from './Controls';
 import Progress from './Progress';
 import Publication from './Publication';
 import data from './data.json';
-import binOperators from './binOperators';
 
 class Reader extends Component {
   state = {
     publicationIndex: 0,
   };
 
-  onClickPlusOrMinus = operator => {
-    this.setState(prev => {
+  onClickPlusOrMinus = e => {
+    const operator = e.target.name;
+    this.setState(({ publicationIndex }) => {
       return {
-        publicationIndex: binOperators[operator].exec(prev.publicationIndex, 1),
+        publicationIndex:
+          operator === '+' ? (publicationIndex += 1) : (publicationIndex -= 1),
       };
     });
   };
